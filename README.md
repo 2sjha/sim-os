@@ -16,13 +16,13 @@ Please refer to [UTD's Academic Dishonesty](https://conduct.utdallas.edu/dishone
 
 - `make` or `make debug` to build release and debug executable `computer.exe` respectively.
 
-- ./computer.exe 0
+- `./computer.exe 0`
 this instance of computer.exe will act as the printer server. Printer server has its own version of shell which only supports 0 & 6 shell command.
 
-- ./computer.exe 2
+- `./computer.exe 2`
 this instance of computer.exe will act as a client computer with CID = 2.
 
-- ./computer.exe
+- `./computer.exe`
 With no CID, will prompt to input CID.
 
 ## Simulated shell Commands
