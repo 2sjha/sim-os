@@ -1,3 +1,35 @@
+# Simulated OS - Project 1
+
+
+## Note for UT Dallas students
+
+This was Project 1 for UTD's CS5348 course.
+Please don't use this code as is, because it may be flagged for plagiarism. UTD CS department takes plagiarism very seriously.
+Please refer to [UTD's Academic Dishonesty](https://conduct.utdallas.edu/dishonesty) page for more info.
+
+## Instructions for Simulated CPU
+
+- OP Code   : Operand   : System actions
+- 1 (load)  : constant  : Load the constant to AC
+- 2 (load)  : m-addr    : Load Mem[m-addr] into AC
+- 3 (add)   : m-addr    : Load Mem[m-addr] into MBR, add MBR to AC
+- 4 (mul)   : m-addr    : Same as above, except that add becomes multiply
+- 5 (store) : m-addr    : Store AC to Mem[m-addr]
+- 6 (ifgo)  : m-addr    : If AC > 0 then go to the address given in Mem[m-addr] Otherwise, continue to the next instruction
+- 7 (print) : Null      : Print the value in AC
+- 8 (sleep) : Time      : Sleep for the given “time” in microseconds, which is the operand
+- 9 (shell) : Code      : Execute the shell command according to code (elaborated later)
+- 0 (exit)  : Null      : End of the current program, null is 0 and is unused
+
+## Simulated shell Commands
+
+- 0 : Shut Down computer
+- 1 : Run program
+- 2 : Print Registers
+- 3 : Print Memory
+
+## File descriptions
+
 1. computer.c
 - This file has the main function which reads mem_size from config.sys,
   then initializes the CPU and Memory in boot_system function.
@@ -9,7 +41,7 @@
 - Starts CPU Operation
 - Calls load_finish to cleanup
 
-2.computer.h
+2. computer.h
 - Contains prototypes of functions which are used accross the project.
 - Also contains the struct definitions
 
