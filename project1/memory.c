@@ -1,9 +1,9 @@
 #include <stdlib.h>
 #include "computer.h"
 
-extern RegisterFile REGS;
+extern struct RegisterFile REGS;
 
-Memory MEM = {0, NULL};
+struct Memory MEM = {0, NULL};
 
 void mem_init(int M)
 {

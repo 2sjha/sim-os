@@ -1,34 +1,34 @@
 #include <stdio.h>
 
 /* Simulated Register*/
-Register
+struct Register
 {
     int reg_val;
 };
 
 /*Simulated RegisterFile*/
-RegisterFile
+struct RegisterFile
 {
-    Register PC;
-    Register IR0;
-    Register IR1;
-    Register AC;
-    Register MAR;
-    Register MBR;
-    Register BASE;
+    struct Register PC;
+    struct Register IR0;
+    struct Register IR1;
+    struct Register AC;
+    struct Register MAR;
+    struct Register MBR;
+    struct Register BASE;
 };
 
 /*Simulated Memory*/
-Memory
+struct Memory
 {
     int size;
     int *mem_arr;
 };
 
 /*PCB*/
-PCB
+struct PCB
 {
-    RegisterFile REG_STATE;
+    struct RegisterFile REG_STATE;
     int PID;
 };
 

@@ -18,3 +18,8 @@ load.o: load.c
 
 shell.o: shell.c
 	$(CC) $(CFLAGS) -c shell.c -o shell.o
+
+.PHONY: clean
+clean:
+	rm *.o
+	rm computer.exe

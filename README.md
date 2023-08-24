@@ -1,18 +1,16 @@
 # Simulated OS
 
+This was the final OS project built on top of [Project 1](./project1/) and [Project 2](./project2/). The simulated OS has a simulated [CPU](./cpu.c), [Memory](./memory.c), [Shell](./shell.c), and a Round-Robin [scheduler](./scheduler.c). This also has a [simulated printer](./printer.c) which operates over the network with a printer manager that handles print instructions for each simulated process by spooling each process's print instructions.
 
+When the simulated computer starts, it prompts the user with a simulated shell. Allowed shell commands are given below. When a user inputs a program (simulated process) to be run, the user must also provide the base address for the program's PCB block. We assume that the user will provide the correct base addresses to avoid memory overlap between programs loaded in the memory. Multiple programs running are scheduled using a Round-Robin scheduler. Whenever a simulated process issues a print instruction, it is communicated to the simulated printer via the pipe. The printer spools each process's print instructions, and at the process exit, all spooled print instructions are printed together on the [simulated paper](./printer.out).
 
-[Semaphore Synchronization Design](./DESIGN.md)
+Furthermore, the printer being on the network now allows to have multiple computers(identified by c_id) to connect to this printer and the printer manager handles each process's spools for each computer. The printer manager uses bounded buffer synchronization for incoming socket connections, and it also implements bounded buffers for each computer's print instructions via message queues. The simulated paper printer now utilizes the Readers-Writer synchronization while reading from the message queues and printing to the paper. Please refer [Semaphore Synchronization Design](./DESIGN.md) for more details.
 
 ## Note for UT Dallas students
 
 This was Project 3 for UTD's CS5348 course.
 Please don't use this code as is, because it may be flagged for plagiarism. UTD CS department takes plagiarism very seriously.
 Please refer to [UTD's Academic Dishonesty](https://conduct.utdallas.edu/dishonesty) page for more info.
-
-## Project 1 & 2
-
-Although Project 3 the main focus of this repository, I've also included [Project 1](./project1/) and [Project 2](./project2/).
 
 ## How to run
 

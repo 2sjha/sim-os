@@ -2,8 +2,10 @@
 
 ## Printer Server
 
-CID=0 computer instance acts the Printer Manager, which listens on a socket server, also initializes a bounded buffer(& its semaphores) for the socket connections it will recieve.
-CID>0 computer instances will act as clients, as they start up they connect to the printer server, thus Printer must be started beforehand.
+`CID = 0` computer instance acts the Printer Manager, which listens on a socket server, also initializes a bounded buffer(& its semaphores) for the socket connections it will recieve.
+
+`CID > 0` computer instances will act as clients, as they start up they connect to the printer server, thus Printer must be started beforehand.
+
 When the printer receives a new connection, The new connection is put in the bounded buffer, and communicators read the connection from the same.
 Bounded Buffer semaphore design taken from the lecture slides.
 

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "computer.h"
 
-extern Memory MEM;
+extern struct Memory MEM;
 
 FILE *load_prog(char *fname, int p_addr)
 {

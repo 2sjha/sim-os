@@ -3,9 +3,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-extern RegisterFile REGS;
+extern struct RegisterFile REGS;
 
-PCB Process;
+struct PCB Process;
 
 int parse_int(char *num)
 {

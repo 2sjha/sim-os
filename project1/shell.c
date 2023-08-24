@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include "computer.h"
 
-extern RegisterFile REGS;
+extern struct RegisterFile REGS;
 
-extern Memory MEM;
+extern struct Memory MEM;
 
 void shell_init()
 {

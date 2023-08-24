@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include "computer.h"
 
-RegisterFile REGS = {{0}, {0}, {0}, {0}, {0}, {0}, {0}};
+struct RegisterFile REGS = {{0}, {0}, {0}, {0}, {0}, {0}, {0}};
 
 int cpu_mem_address(int m_addr)
 {
