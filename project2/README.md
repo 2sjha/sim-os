@@ -1,6 +1,6 @@
 # Simulated OS - Project 2
 
-Similar to Project 1, Project 2 has a simulated computer with [CPU](./cpu.c), [Memory](./memory.c), and [Shell](./shell.c). Furthermore, this adds a Round-Robin [scheduler](./scheduler.c) and to manage print commands, we have a simulated [Paper Printer](./printer.c). The paper printer acts as an offloaded component since it runs on a different process.
+Similar to Project 1, Project 2 has a simulated computer with [CPU](./cpu.c), [Memory](./memory.c), and [Shell](./shell.c). Furthermore, this adds a Round-Robin [scheduler](./scheduler.c) and to manage print commands, we have a simulated [Paper Printer](./printer.c). The paper printer acts as an offloaded component since it runs as a child process.
 
 When the simulated computer starts, it prompts the user with a simulated shell. Allowed shell commands are given below. When the user inputs a program (simulated process) to be run, the user must also provide the base address for the program's PCB block. We assume that the user will provide the correct base addresses to avoid memory overlap between programs loaded in the memory. Multiple programs running are scheduled using a Round-Robin scheduler. Whenever a simulated process issues a print instruction, it is communicated to the simulated printer via the pipe. The printer spools each process's print instructions, and at the process exit all spooled print instructions are printed together on the [simulated paper](./printer.out).
 
